@@ -27,6 +27,14 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+  orderdb:
+    container_name: orderdb
+    environment:
+      MSSQL_SA_PASSWORD: "SWN12345678"
+      ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+      - "1434:1433"
 
   pgadmin:
     container_name: pgadmin
