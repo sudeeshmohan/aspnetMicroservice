@@ -49,7 +49,7 @@ namespace Ordering.API.Controllers
         public async Task<ActionResult<int>> UpdateOrder(UpdateOrderCommand command)
         {
             await _meadiator.Send(command);
-            return NotFound();
+            return NoContent();
         }
 
         [HttpDelete("{id}",Name ="DeleteOrder")]
